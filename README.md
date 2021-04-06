@@ -2,7 +2,7 @@
 ---
 ### Name: FAQ accordion card
 ---
-[GithubPages Link]()
+[GithubPages Link](https://fytrw.github.io/FAQ-Accordion-Card/)
 
-[Vercel Link]()
+[Vercel Link](https://faq-accordion-card-phi-nine.vercel.app/)
 
