@@ -1,0 +1,256 @@
+:root {
+    --verydarkblue: hsl(238, 29%, 16%);
+    --softred: hsl(14, 88%, 65%);
+    --softviolet: hsl(273, 75%, 66%);
+    --softblue: hsl(240, 73%, 65%);
+    --verydarkgrayishblue: hsl(237, 12%, 33%);
+    --darkgrayishblue: hsl(240, 6%, 50%);
+    --lightgrayishblue: hsl(240, 5%, 91%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background-image: linear-gradient(var(--softviolet), var(--softblue));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 500px;
+    height: 500px;
+    width: 900px;
+    display: flex;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        0 12.5px 10px rgba(0, 0, 0, 0.035),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        0 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+
+.card-wrap {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+img.woman {
+    position: absolute;
+    align-self: center;
+    width: 500px;
+    margin-right: 30px;
+    left: -10%;
+    top: 10%;
+    z-index: 3;
+}
+
+img.pattern {
+    position: absolute;
+    height: 800px;
+    z-index: 2;
+    left: -45%;
+    bottom: -17%;
+}
+
+img.box {
+    position: absolute;
+    top: 36%;
+    left: 0;
+    z-index: 5;
+    transform: translateX(-48.7%);
+    background-image: url('images/illustration-box-desktop.svg');
+    background-repeat: no-repeat;
+}
+
+img.mobile {
+    display: none;
+}
+
+.faq {
+    margin-top: 80px;
+    margin-left: 460px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 20px;
+}
+
+@media (orientation: landscape) {
+    .faq {
+        overflow-y: scroll;
+    }
+
+    .faq::-webkit-scrollbar {
+        background-color: #fff;
+        width: 16px;
+    }
+
+    .faq::-webkit-scrollbar-track {
+        background-color: #fff;
+    }
+
+    .faq::-webkit-scrollbar-thumb {
+        background-color: #babac0;
+        border-radius: 16px;
+        border: 4px solid #fff;
+    }
+
+    .faq::-webkit-scrollbar-button {
+        display: none;
+    }
+}
+
+.faq h1 {
+    color: var(--verydarkblue);
+    text-transform: uppercase;
+    font-size: 34px;
+    margin-bottom: 35px;
+    margin-left: 5px;
+}
+
+.qaa {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.qaa li {
+    width: 400px;
+    margin-bottom: 15px;
+    margin-right: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--lightgrayishblue);
+}
+
+.q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+
+.q h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--verydarkgrayishblue);
+}
+
+.q h3.bold {
+    font-weight: 700;
+}
+
+.q:hover h3 {
+    color: var(--softred);
+}
+
+.q .arrow {
+    background-image: url('images/icon-arrow-down.svg');
+    background-repeat: no-repeat;
+    height: 7px;
+    width: 10px;
+    display: block;
+    transition: transform .3s;
+    margin-right: 10px;
+}
+
+.q .arrow.animate {
+    transform: rotate(180deg);
+}
+
+.answer {
+    color: var(--darkgrayishblue);
+    font-size: 12px;
+    display: none;
+    margin-top: 10px;
+    width: 90%;
+}
+
+.answer.show {
+    display: block;
+}
+
+@media (orientation:portrait) {
+    body {
+        align-items: start;
+    }
+
+    .wrapper {
+        position: static;
+        min-height: auto;
+        height: auto;
+        width: 340px;
+        margin-top: 150px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wrapper img.desktop {
+        display: none;
+    }
+
+    .wrapper img.mobile {
+        display: block;
+    }
+
+    img.woman.mobile {
+        position: absolute;
+        top: 35px;
+        left: calc(50% - 14px);
+        transform: translate(-50%);
+        width: 280px;
+        margin-right: 0;
+    }
+
+    img.pattern.mobile {
+        width: 250px;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: auto;
+    }
+
+    .faq {
+        margin: 130px 0 25px 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .faq h1 {
+        margin-bottom: 30px;
+        margin-left: 0;
+    }
+
+    .qaa li {
+        width: 300px;
+        margin-right: 0;
+    }
+
+    .q h3 {
+        font-size: 13px;
+    }
+
+}
