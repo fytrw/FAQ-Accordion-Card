@@ -189,6 +189,7 @@ img.mobile {
 @media (orientation:portrait) {
     body {
         align-items: start;
+        padding-bottom: 30px;
     }
 
     .wrapper {
